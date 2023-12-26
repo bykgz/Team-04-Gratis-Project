@@ -39,7 +39,7 @@ public class Driver {
                 options.addArguments("--headless");
                 options.addArguments("--remote-allow-origins=*");
                 options.addArguments("--window-size=1920,1080");
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
             }
 
 
@@ -57,7 +57,7 @@ public class Driver {
 //            // hali hazıda açılmış olan driverdan devam et demiş olduk,
 //            //java da non-primitivlerin default değeri null dur --> hatırlatma !
 //
-//            switch (ConfigurationReader.getProperty("browser")){
+//            switch (ConfigReader.getProperty("browser")){
 //                case "chrome":
 //                    driver = new ChromeDriver();
 //                    break;
@@ -83,8 +83,8 @@ public class Driver {
 //        }
 //        return driver;
 //    }
-
-
+//
+//
 
 
 
