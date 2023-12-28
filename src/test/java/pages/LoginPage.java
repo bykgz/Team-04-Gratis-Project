@@ -34,4 +34,43 @@ public class LoginPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Mesut
+    @FindBy(css = ".log-box.dropper.ng-star-inserted")
+    public WebElement loginButtonMe;
+    @FindBy(xpath = "(//li[@class=\"highlighted ng-star-inserted\"])[1]")
+    public WebElement loginButtonGirisMe;
+    @FindBy(xpath = "(//input[@class='ng-untouched ng-pristine ng-invalid'])[1]")
+    public WebElement loginEmailMe;
+    @FindBy(xpath = "(//input[@class=\"search-input\"])[1]")
+    public WebElement searchTabMe;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Mesut
 }
