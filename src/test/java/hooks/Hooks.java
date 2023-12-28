@@ -23,15 +23,15 @@ public class Hooks {
      */
 
 
-    @Before
-    public void setup() {
-        Driver.getDriver();
-    }
-
-    @After
-    public void tearDown() {
-        Driver.quitDriver();
-    }
+//    @Before
+//    public void setup() {
+//        Driver.getDriver();
+//    }
+//
+//    @After
+//    public void tearDown() {
+//        Driver.quitDriver();
+//    }
 
 
 
