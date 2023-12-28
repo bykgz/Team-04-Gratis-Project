@@ -1,3 +1,4 @@
+@US07
 Feature: US07 Kullanıcı Elektronik Ürünler kategorisinde stokta olan tüm ürünleri listeyebilmeli
   Background: Siteye git
   And kullanici siteye gider

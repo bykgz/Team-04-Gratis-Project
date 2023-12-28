@@ -1,3 +1,4 @@
+@US08
 Feature: US08 Kullanıcı herhangi bir kategoride seçeceği bir ürünün stok kontolünü yapabilmeli
   Background: Siteye git
     And kullanici siteye gider
