@@ -44,9 +44,11 @@ public class Hooks {
             //attach --> eklemek demek fail olma durumunda, attach metodu ekran görüntüsünü test raporuna ekler.
             Driver.closeDriver();  //hata aldıkdan sonra browseri kapat
         }
+
+       // Driver.closeDriver();
+
+
     }
-
-
 
 }
 
