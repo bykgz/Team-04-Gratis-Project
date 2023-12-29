@@ -1,6 +1,7 @@
 package hooks;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -21,15 +22,33 @@ public class Hooks {
     screenshoot alması amacıyla @After methodunu kullanacagız
      */
 
-    @After
-    public void tearDown(Scenario scenario) {
-        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-        if (scenario.isFailed()) {
-            scenario.attach(screenshot, "image/png", "screenshots");
-        }
-       // Driver.closeDriver();
-    }
 
+//    @Before
+//    public void setup() {
+//        Driver.getDriver();
+//    }
+//
+//    @After
+//    public void tearDown() {
+//        Driver.quitDriver();
+//    }
+
+
+
+    @After
+    public void tearDown(Scenario scenario) {  // scenario fail olursa diyebilmemiz için Scenario parametresi yazmamız gerek
+        if (scenario.isFailed()) {  //eğer scenario fail olursa
+            TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+            scenario.attach(ts.getScreenshotAs(OutputType.BYTES) , "image/png" , "scenario_" + scenario.getName());
+            // burda OutputType.BYTES olması gerek  ve mediaType (medyanın tipini)  ve name parametrelerini yazıyoruz  -->hangi seneryoda hata aldıysa "scenario_" yazsın ve seneryonun adını yazsın
+            //attach --> eklemek demek fail olma durumunda, attach metodu ekran görüntüsünü test raporuna ekler.
+            Driver.closeDriver();  //hata aldıkdan sonra browseri kapat
+        }
+
+       // Driver.closeDriver();
+
+
+    }
 
 }
 

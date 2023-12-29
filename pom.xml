@@ -21,7 +21,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.15.0</version>
+            <version>4.16.1</version>
         </dependency>
 
 
@@ -141,7 +141,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Amazon-Project-Jenkins</projectName>
+                            <projectName>Gratis-Project</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
                             <!--  <cucumberOutput>${project.build.directory}</cucumberOutput>-->
                             <inputDirectory>${project.build.directory}</inputDirectory>
