@@ -23,15 +23,15 @@ public class Hooks {
      */
 
 
-    @Before
-    public void setup() {
-        Driver.getDriver();
-    }
-
-    @After
-    public void tearDown() {
-        Driver.quitDriver();
-    }
+//    @Before
+//    public void setup() {
+//        Driver.getDriver();
+//    }
+//
+//    @After
+//    public void tearDown() {
+//        Driver.quitDriver();
+//    }
 
 
 
@@ -44,9 +44,11 @@ public class Hooks {
             //attach --> eklemek demek fail olma durumunda, attach metodu ekran görüntüsünü test raporuna ekler.
             Driver.closeDriver();  //hata aldıkdan sonra browseri kapat
         }
+
+       // Driver.closeDriver();
+
+
     }
-
-
 
 }
 

@@ -70,4 +70,73 @@ public class US01_StepDefs {
        Driver.closeDriver();
     }
 
+
+    @When("Kullanici {string} eposta-Cep kutusunu boş bırakır")
+    public void kullaniciEpostaCepKutusunuBoşBırakır(String eposta) {
+        loginPage.epostaBox.sendKeys(eposta);
+        ReusableMethods.bekle(1);
+    }
+
+    @And("Kullanici {string} sifre kutusunu boş bırakır")
+    public void kullaniciSifreKutusunuBoşBırakır(String sifre) {
+        loginPage.passwordBox.sendKeys(sifre);
+        ReusableMethods.bekle(2);
+    }
+
+
+
+    @And("Kullanici {string}  kutusuna sifre girisi yapar")
+    public void kullaniciKutusunaSifreGirisiYapar(String sifre) {
+        loginPage.passwordBox.sendKeys(sifre);
+        ReusableMethods.bekle(1);
+    }
+
+    @And("Kullanici {string} kutusuna  eposta-Cep girisi yapar")
+    public void kullaniciKutusunaEpostaCepGirisiYapar(String eposta) {
+        loginPage.epostaBox.sendKeys(eposta);
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("login isleminin gerceklesmedigini dogrular")
+    public void loginIslemininGerceklesmediginiDogrular() {
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("login"));
+    }
+
+    @And("Kullanici {string} kutusunu bos birakir")
+    public void kullaniciKutusunuBosBirakir(String sifre) {
+        loginPage.passwordBox.sendKeys(sifre);
+        ReusableMethods.bekle(1);
+    }
+
+    @And("Kullanici {string} kutusuna  hatalı eposta-Cep girisi yapar")
+    public void kullaniciKutusunaHatalıEpostaCepGirisiYapar(String eposta) {
+        loginPage.epostaBox.sendKeys(eposta);
+        ReusableMethods.bekle(2);
+    }
+
+    @And("Kullanici {string}  kutusuna hatalı sifre girisi yapar")
+    public void kullaniciKutusunaHatalıSifreGirisiYapar(String sifre) {
+        loginPage.passwordBox.sendKeys(sifre);
+        ReusableMethods.bekle(1);
+    }
+
+    @And("Kullanici {string} kutusuna  @ olmadan eposta-Cep girisi yapar")
+    public void kullaniciKutusunaOlmadanEpostaCepGirisiYapar(String eposta) {
+        loginPage.epostaBox.sendKeys(eposta);
+        ReusableMethods.bekle(1);
+    }
+
+    @And("Kullanici {string} kutusuna hatali sifre girisi yapar")
+    public void kullaniciKutusunaHataliSifreGirisiYapar(String sifre) {
+        loginPage.passwordBox.sendKeys(sifre);
+        ReusableMethods.bekle(1);
+    }
+
+    @And("Kullanici giris yap butonuna tiklar")
+    public void kullaniciGirisYapButonunaTiklar() {
+        ReusableMethods.bekle(2);
+        ReusableMethods.clickElementByJS(loginPage.girisYapButton2);
+
+    }
 }
